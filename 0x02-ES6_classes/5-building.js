@@ -23,9 +23,9 @@ class Building {
     this._sqft = sqft;
   }
 
-  // Implementing the abstract method
+  // Abstract method
   evacuationWarningMessage() {
-    return `Evacuate the building immediately! This is a ${this._floors}-floor office building.`;
+    throw new Error('Class extending Building must override evacuationWarningMessage');
   }
 }
 
