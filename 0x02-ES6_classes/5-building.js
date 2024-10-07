@@ -25,7 +25,7 @@ class Building {
 
   // Abstract method
   evacuationWarningMessage() {
-    throw new Error('Class extending Building must override evacuationWarningMessage');
+    throw new Error(`Class extending Building with ${this.sqft} sqft must override evacuationWarningMessage`);
   }
 }
 
