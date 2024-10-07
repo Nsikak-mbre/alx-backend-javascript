@@ -1,8 +1,8 @@
 class Building {
   constructor(sqft) {
-    if (new.target === Building) {
-      throw new TypeError('Cannot instantiate abstract class Building directly');
-    }
+    // if (new.target === Building) {
+    //   throw new TypeError('Cannot instantiate abstract class Building directly');
+    // }
 
     if (typeof sqft !== 'number') {
       throw new TypeError('sqft must be a number');
