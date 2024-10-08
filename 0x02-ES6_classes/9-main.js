@@ -1,48 +1,9 @@
-export class HolbertonClass {
-  constructor(year, location) {
-    this._year = year;
-    this._location = location;
-  }
+import { listOfStudents } from './9-hoisting';
 
-  get year() {
-    return this._year;
-  }
+console.log(listOfStudents);
 
-  get location() {
-    return this._location;
-  }
-}
+const listPrinted = listOfStudents.map(
+  (student) => student.fullStudentDescription,
+);
 
-export class StudentHolberton {
-  constructor(firstName, lastName, holbertonClass) { // Added holbertonClass parameter
-    this._firstName = firstName;
-    this._lastName = lastName;
-    this._holbertonClass = holbertonClass; // Store holbertonClass instance
-  }
-
-  get fullName() {
-    return `${this._firstName} ${this._lastName}`;
-  }
-
-  get holbertonClass() {
-    return this._holbertonClass; // Fixed return statement to correctly reference the stored class
-  }
-
-  get fullStudentDescription() {
-    return `${this._firstName} ${this._lastName} - ${this._holbertonClass.year} - ${this._holbertonClass.location}`; // Use `this` instead of `self`
-  }
-}
-
-// Instantiate HolbertonClass objects
-const class2019 = new HolbertonClass(2019, 'San Francisco');
-const class2020 = new HolbertonClass(2020, 'San Francisco');
-
-// Instantiate StudentHolberton objects
-const student1 = new StudentHolberton('Guillaume', 'Salva', class2020);
-const student2 = new StudentHolberton('John', 'Doe', class2020);
-const student3 = new StudentHolberton('Albert', 'Clinton', class2019);
-const student4 = new StudentHolberton('Donald', 'Bush', class2019);
-const student5 = new StudentHolberton('Jason', 'Sandler', class2019);
-
-// Correctly export the list of students
-export const listOfStudents = [student1, student2, student3, student4, student5];
+console.log(listPrinted);
