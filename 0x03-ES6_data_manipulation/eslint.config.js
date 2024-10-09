@@ -1,11 +1,16 @@
-// eslint.config.js
 import { FlatCompat } from '@eslint/eslintrc';
 import airbnbBase from 'eslint-config-airbnb-base';
 import jestPlugin from 'eslint-plugin-jest';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+// Get current directory
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Use FlatCompat to convert .eslintrc style config to new format
 const compat = new FlatCompat({
-  baseDirectory: __dirname, // Current project directory
+  baseDirectory: __dirname,
   resolvePluginsRelativeTo: __dirname,
 });
 
