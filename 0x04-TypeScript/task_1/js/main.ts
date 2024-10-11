@@ -39,6 +39,16 @@ console.log(director1);
     yearsOfExperience: 5,
     contract: true // Additional property
   };
+
+  // Define the printTeacherFunction interface
+interface printTeacherFunction {
+  (firstName: string, lastName: string): string;
+}
+
+// Implement the printTeacher function
+const printTeacher: printTeacherFunction = (firstName, lastName) => {
+  return `${firstName.charAt(0)}. ${lastName}`;
+};
   
   console.log(teacher1, teacher2);
   
