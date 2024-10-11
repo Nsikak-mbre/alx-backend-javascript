@@ -6,6 +6,21 @@ interface Teacher {
     location: string;
     [key: string]: any; // Index signature to allow additional properties
   }
+
+  interface Directors extends Teacher {
+    numberOfReports: number;
+  }
+
+  // Create an instance of Directors
+const director1: Directors = {
+  firstName: "John",
+  lastName: "Doe",
+  fullTimeEmployee: true,
+  location: "London",
+  numberOfReports: 17,
+};
+
+console.log(director1);
   
   // Implementing the Teacher interface
   const teacher1: Teacher = {
