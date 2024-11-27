@@ -1,5 +1,5 @@
-const displayMessage = function(message) {
+export const displayMessage = function(message) {
   console.log(message);
 }
 
-module.exports = displayMessage;
+// module.exports = displayMessage;
