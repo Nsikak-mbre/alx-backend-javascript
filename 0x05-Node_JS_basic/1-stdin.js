@@ -7,8 +7,11 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
+// Display a message to the user
+console.log('Welcome to Holberton School, what is your name?');
+
 // make a prompt & Read the user's input
-rl.question('Welcome to Holberton School, what is your name?', (name) => {
+rl.question('', (name) => {
   console.log(`Your name is: ${name}`);
   rl.close();
 });
