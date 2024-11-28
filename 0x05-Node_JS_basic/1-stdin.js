@@ -1,14 +1,25 @@
-process.stdout.write('Welcome to Holberton School, what is your name?\n');
+// Import the readline module
+const readline = require('readline');
 
-process.stdin.on('data', (data) => {
-  const name = data.toString().trim();
-  
-  if (name) {
-    process.stdout.write(`Your name is: ${name}\n`);
-    process.stdout.write('This important software is now closing\n');
-    process.exit();
-  }
+// Create the readline interface
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
 });
 
-// If no input is received (interactive mode), keep the process open
-process.stdin.resume()
+// Flag to track if input was processed
+let inputHandled = false;
+
+// Display a message to the user and prompt for input
+rl.question('Welcome to Holberton School, what is your name?\n', (name) => {
+  console.log(`Your name is: ${name}`);
+  inputHandled = true; // Mark that input has been processed
+  rl.close(); // Explicitly close the readline interface
+});
+
+// Handle the close event to display the closing message
+rl.on('close', () => {
+  if (inputHandled) {
+    console.log('This important software is now closing');
+  }
+});
