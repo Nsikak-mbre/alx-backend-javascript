@@ -35,7 +35,7 @@ const countStudents = (path) => {
 
     // print the number of students per field
     for (const field in fieldCounts) {
-      if (fieldCounts.hasOwnProperty.call(field)) {
+      if (fieldCounts.hasOwnProperty(field)) {
         console.log(`Number of students in ${field}: ${fieldCounts[field]}. List: ${fieldStudents[field].join(', ')}`);
       }
     }
