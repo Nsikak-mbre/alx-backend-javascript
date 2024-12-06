@@ -12,4 +12,6 @@ describe('Sum', function () {
    it('sum of whole numbers with floating point numbers should return whole number', function () {
       assert.equal(calculateNumber(1 , 1.5), 3);
    });
+   it('should round the first number and sum', function () { 
+    assert.equal(calculateNumber(1.6, 1), 3); });
 });
