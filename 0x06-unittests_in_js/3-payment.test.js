@@ -7,7 +7,7 @@ describe("sendPaymentRequestToApi function used", function () {
   let calculateNumberSpy;
 
   beforeEach(function () {
-    calculateNumberSpy.sinon.spy(Utilis, "calculateNumber");
+    calculateNumberSpy = sinon.spy(Utilis, "calculateNumber");
   });
   afterEach(function () {
     calculateNumberSpy.restore();
@@ -16,6 +16,6 @@ describe("sendPaymentRequestToApi function used", function () {
     sendPaymentRequestToApi(100, 20);
 
     expect(calculateNumberSpy.calledOnce).to.be.true;
-    expect(calculateNumberSpy.calledWith("SUM", 100, 200)).to.be.true;
+    expect(calculateNumberSpy.calledWith("SUM", 100, 20)).to.be.true;
   });
 });
