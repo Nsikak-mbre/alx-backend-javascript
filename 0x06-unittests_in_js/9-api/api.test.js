@@ -25,3 +25,28 @@ describe('Index page', () => {
     });
   });
 });
+
+describe('Cart page', () => {
+  const API_URL = 'http://localhost:7865';
+
+  it('should return status code 200 when id is a number', (done) => {
+    request.get(`${API_URL}/cart/12`, (error, response) => {
+      expect(response.statusCode).to.equal(200);
+      done();
+    });
+  });
+
+  it('should return correct message when id is a number', (done) => {
+    request.get(`${API_URL}/cart/12`, (error, response, body) => {
+      expect(body).to.equal('Payment methods for cart 12');
+      done();
+    });
+  });
+
+  it('should return status code 404 when id is NOT a number', (done) => {
+    request.get(`${API_URL}/cart/hello`, (error, response) => {
+      expect(response.statusCode).to.equal(404);
+      done();
+    });
+  });
+});
