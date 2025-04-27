@@ -19,3 +19,4 @@ export default async function getFullResponseFromAPI(success) {
     throw new Error("The fake API is not working currently");
   }
 }
+
