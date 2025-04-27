@@ -14,7 +14,7 @@
 
 export default async function getFullResponseFromAPI(success) {
   if (success) {
-    return new Promise({ status: 200, body: "Success" });
+    return new { status: 200, body: "Success" };
   } else {
     throw new Error("The fake API is not working currently");
   }
