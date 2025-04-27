@@ -12,7 +12,7 @@
 // }
 
 
-export async function getFullResponseFromAPI(success) {
+export default async function getFullResponseFromAPI(success) {
   if (success) {
     return { status: 200, body: "Success" };
   } else {
